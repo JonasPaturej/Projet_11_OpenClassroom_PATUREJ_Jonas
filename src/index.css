@@ -7,6 +7,7 @@ body {
   font-family: Montserrat, sans-serif;
 }
 
+/* Header */
 .header {
   display: flex;
   align-items: center;
@@ -39,6 +40,7 @@ body {
   text-decoration: underline;
 }
 
+/* Home */
 .banner {
   position: relative;
   height: 223px;
@@ -130,6 +132,99 @@ body {
   line-height: 1.3;
 }
 
+/* About */
+.about_collapses {
+  max-width: 1100px;
+  margin: 60px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Collapse */
+.collapse {
+  width: 100%;
+}
+
+.collapse_header {
+  width: 100%;
+  background: #ff6060;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 18px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.collapse_title {
+  font-size: 34px;
+}
+
+.collapse_chevron {
+  color: white;
+  font-size: 30px;
+}
+
+.collapse_content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.collapse_content--open {
+  max-height: 500px;
+}
+
+.collapse_inner {
+  background: #f6f6f6;
+  border-radius: 0 0 10px 10px;
+  padding: 18px;
+  color: #000;
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+/* 404 not found */
+.notFound {
+  min-height: calc(100vh - 220px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  padding: 40px 0;
+}
+
+.notFound_code {
+  margin: 0;
+  font-size: 288px;
+  font-weight: 700;
+  line-height: 1;
+  color: #ff6060;
+}
+
+.notFound_txt {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  color: #ff6060;
+  text-align: center;
+}
+
+.notFound_link {
+  font-size: 15px;
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Footer */
 .footer {
   background: black;
   color: white;
