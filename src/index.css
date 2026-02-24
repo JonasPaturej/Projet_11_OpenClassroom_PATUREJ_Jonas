@@ -3,8 +3,19 @@
 }
 
 body {
+  height: 100%;
   margin: 0;
   font-family: Montserrat, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 /* Header */
@@ -19,6 +30,7 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 80px;
+  width: 100%;
 }
 
 .header_logo {
@@ -83,7 +95,8 @@ body {
 .home_cardsWrapper {
   background: #f6f6f6;
   border-radius: 25px;
-  padding-left: 50px;
+  padding-top: 25px;
+  padding-left: 25px;
 }
 
 .home_cardsGrid {
@@ -191,6 +204,145 @@ body {
   line-height: 1.5;
 }
 
+/* Logement */
+.logement_top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 24px 0;
+}
+
+.logement_title {
+  margin: 0;
+  color: #ff6060;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.logement_location {
+  margin: 8px 0 16px;
+  font-weight: bold;
+}
+
+.logement_tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #ff6060;
+  color: white;
+  border-radius: 10px;
+  padding: 4px 14px;
+  font-size: 14px;
+}
+
+.host {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.host_name {
+  margin: 0;
+  color: #ff6060;
+  text-align: right;
+}
+
+.host_img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Rating star */
+.rate {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.rating_star {
+  font-size: 24px;
+  color: #e3e3e3;
+  margin-left: 8px;
+}
+
+.rating_star--filled {
+  color: #ff6060;
+}
+
+/* Gallery */
+.gallery {
+  position: relative;
+  height: 415px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.gallery_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery_btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 80px;
+  cursor: pointer;
+  padding: 0 16px;
+}
+
+.gallery_btn--left {
+  left: 10px;
+}
+.gallery_btn--right {
+  right: 10px;
+}
+
+.gallery_count {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+
+.logement_collapses {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 24px;
+}
+
+.logement_collapses .collapse_header {
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 16px;
+}
+
+.logement_collapses .collapse_title {
+  font-size: 18px;
+}
+
+.logement_collapses .collapse_inner {
+  font-size: 16px;
+  padding: 16px;
+}
+
+.equipments {
+  margin: 0;
+  padding-left: 18px;
+}
+
 /* 404 not found */
 .notFound {
   min-height: calc(100vh - 220px);
@@ -226,6 +378,7 @@ body {
 
 /* Footer */
 .footer {
+  width: 100%;
   background: black;
   color: white;
   text-align: center;
@@ -234,11 +387,149 @@ body {
 }
 
 .footer_logo {
+  width: 122px;
   height: 40px;
   margin-bottom: 20px;
 }
 
 .footer_text {
   margin: 0;
-  font-size: 14px;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  /* Container */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Header */
+  .header_logo {
+    height: 40px;
+  }
+
+  .header_nav {
+    gap: 18px;
+  }
+
+  .header_link {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .banner {
+    height: 111px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+  }
+
+  .banner_title {
+    font-size: 24px;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 0 16px;
+  }
+
+  .home_cardsWrapper {
+    background: transparent;
+    border-radius: 0;
+    padding-left: 0;
+  }
+
+  .home_cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    height: 255px;
+  }
+
+  .gallery {
+    height: 255px;
+    border-radius: 10px;
+  }
+
+  .gallery_btn i {
+    font-size: 40px;
+  }
+
+  .gallery_count {
+    display: none;
+  }
+
+  .logement_top {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .logement_right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logement_right .rate {
+    order: 1;
+  }
+
+  .logement_right .host {
+    order: 2;
+  }
+
+  .host_img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .rating_star {
+    font-size: 18px;
+    margin-left: 6px;
+  }
+
+  .logement_collapses {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about_collapses {
+    max-width: none;
+    margin: 22px 0 0;
+    gap: 20px;
+  }
+
+  .collapse_title {
+    font-size: 16px;
+  }
+
+  .collapse_inner {
+    font-size: 14px;
+  }
+
+  /* 404 */
+  .notFound {
+    gap: 50px;
+    padding: 40px 0;
+    min-height: calc(100vh - 200px);
+  }
+
+  .notFound_code {
+    font-size: 96px;
+  }
+
+  .notFound_txt {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
+  .notFound_link {
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 30px;
+    width: 100%;
+  }
 }

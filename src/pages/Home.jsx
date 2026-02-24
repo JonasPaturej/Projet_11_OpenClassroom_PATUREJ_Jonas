@@ -8,20 +8,20 @@ export default function Home() {
     <>
       <Banner image={fond} title="Chez vous, partout et ailleurs"/>
 
-    <section className="home">
-      <div className="home_cardsWrapper">
-        <div className="home_cardsGrid">
-          {logements.map((logement) => (
-            <Card
-              key={logement.id}
-              id={logement.id}
-              title={logement.title}
-              cover={logement.cover}
-            />
-          ))}
+      <section className="home">
+        <div className="home_cardsWrapper">
+          <div className="home_cardsGrid">
+            {logements.map((logement) => (
+              <Card
+                key={logement.id}
+                id={logement.id}
+                title={logement.title}
+                cover={logement.cover}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   )
 }
