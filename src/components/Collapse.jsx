@@ -6,7 +6,7 @@ export default function Collapse({ title, children }) {
     return (
         <div className="collapse">
             <button type="button" className="collapse_header" onClick={() => setIsOpen((v) => !v)} aria-expanded={isOpen}>
-                <span className="collapse_title">{title}</span>
+                <h2 className="collapse_title">{title}</h2>
                 <i className={"fa-solid " + (isOpen ? "fa-angle-down " : "fa-angle-up ") + "collapse_chevron"}/>
             </button>
 
